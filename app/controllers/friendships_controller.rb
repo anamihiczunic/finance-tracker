@@ -4,7 +4,7 @@ class FriendshipsController < ApplicationController
     friend = User.where(id: params[:friend]).first
     current_user.friendships.build(friend_id: friend.id)
     if current_user.save
-      flash[:notice] = "You are now friends with #{friend.first_name}"
+      flash[:notice] = "You are now friends"
     else
       flash[:alert] = "There was something wrong with the tracking request"
     end
